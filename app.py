@@ -6,6 +6,7 @@ app = Flask(__name__)
 api = Api(app)
 
 
+# Resource
 class Operation(Resource):
     def post(self):
         data = request.get_json()
@@ -40,6 +41,7 @@ class Operation(Resource):
             res = x/y
         
         return {'Computed Result': res}
+
 
 # Setup links and run!        
 api.add_resource(Operation, '/calc')
